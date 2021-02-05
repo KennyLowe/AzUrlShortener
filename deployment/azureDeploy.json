@@ -21,7 +21,7 @@
             }
         },
         "defaultRedirectUrl": {
-            "defaultValue": "https://azure.com",
+            "defaultValue": "https://www.engineeringtechnologists.com",
             "type": "string",
             "metadata": {
                 "description": "Default URL use when the key pass by the user is not found."
