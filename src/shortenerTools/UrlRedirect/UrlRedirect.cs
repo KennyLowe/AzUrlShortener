@@ -50,7 +50,7 @@ namespace Cloud5mins.Function
             }
             else
             {
-                log.LogInformation("Bad Link, resorting to fallback.");
+                log.LogInformation("Bad Link, resorting to fallback KJL.");
             }
 
             var res = req.CreateResponse(HttpStatusCode.Redirect);
