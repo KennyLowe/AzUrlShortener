@@ -42,7 +42,7 @@ namespace Cloud5mins.domain
             return new ShortUrlEntity
             {
                 PartitionKey = endUrl.First().ToString(),
-                RowKey = endUrl,
+                RowKey = endUrl.ToLower(),
                 Url = longUrl,
                 Title = title
             };
