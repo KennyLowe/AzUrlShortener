@@ -43,7 +43,7 @@ namespace Cloud5mins.domain
 
         public async Task<ShortUrlEntity> GetShortUrlEntity(ShortUrlEntity row)
         {
-             TableOperation selOperation = TableOperation.Retrieve<ShortUrlEntity>(row.PartitionKey, row.RowKey);
+             TableOperation selOperation = TableOperation.Retrieve<ShortUrlEntity>(row.PartitionKey, row.RowKey.ToLower());
              TableResult result = await GetUrlsTable().ExecuteAsync(selOperation);
              ShortUrlEntity eShortUrl = result.Result as ShortUrlEntity;
              return eShortUrl;
