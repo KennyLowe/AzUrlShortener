@@ -15,7 +15,7 @@ namespace Cloud5mins.Function
         [FunctionName("UrlRedirect")]
         public static async Task<HttpResponseMessage> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = "UrlRedirect/{shortUrl}")] HttpRequestMessage req,
-            string shortUrl, 
+            string shortUrl,
             ExecutionContext context,
             ILogger log)
         {
@@ -35,8 +35,8 @@ namespace Cloud5mins.Function
 
                 StorageTableHelper stgHelper = new StorageTableHelper(config["UlsDataStorage"]); 
 
-                var tempUrl = new ShortUrlEntity(string.Empty, shortUrl);
-                
+                var tempUrl_old = new ShortUrlEntity(string.Empty, shortUrl);
+                var tempUrl = tempUrl_old.toLower();
                 var newUrl = await stgHelper.GetShortUrlEntity(tempUrl);
 
                 if (newUrl != null)
